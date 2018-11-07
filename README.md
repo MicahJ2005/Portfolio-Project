@@ -66,11 +66,11 @@ For base mode, you should only include **one** tag per project. This gives you a
 
 ### Project Page
 
-![Project Page](wireframes/project_page.png)
+![Project Page](wireframes/project_page.png =560x)
 
 ### Admin Page
 
-![Admin Page](wireframes/admin_page.png)
+![Admin Page](wireframes/admin_page.png =560x)
 
 ## Stretch Goals
 
