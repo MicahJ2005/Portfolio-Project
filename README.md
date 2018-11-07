@@ -66,11 +66,11 @@ For base mode, you should only include **one** tag per project. This gives you a
 
 ### Project Page
 
-![Project Page](wireframes/project_page.png =560x)
+<img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/project_page.png" width="560">
 
 ### Admin Page
 
-![Admin Page](wireframes/admin_page.png =560x)
+<img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/admin_page.png" width="560">
 
 ## Stretch Goals
 
