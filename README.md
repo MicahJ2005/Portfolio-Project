@@ -56,7 +56,7 @@ Place thumbnail images in the `public/images` folder.
 
 ### Project Page
 
-- [ ] Client side route that display projects that are stored in the database
+- [ ] Client side route that displays projects that are stored in the database
 - [ ] Each project should conditionally render a name, description, thumbnail, website, date complete and a tag. Many of the fields are optional, only show properties that aren't null.
 - [ ] Include a link to GitHub that opens in a new window
 - [ ] Add your name at the top of the page
