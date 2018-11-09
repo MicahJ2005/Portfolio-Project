@@ -72,20 +72,20 @@ Place thumbnail images in the `public/images` folder.
 
 ### General Tasks
 
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Using branches to help break down your features.
+- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
 - [ ] Comment your code.
 - [ ] Update this README to include a description of the project in your own words.
 
-### Wireframes
+## Wireframes
 
 > NOTE: Feel free to modify the styling and layout of content on the page. 
 
-## Project Page
+### Project Page
 
 <img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/project_page.png" width="560">
 
 
-## Admin Page
+### Admin Page
 
 <img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/admin_page.png" width="560">
 
