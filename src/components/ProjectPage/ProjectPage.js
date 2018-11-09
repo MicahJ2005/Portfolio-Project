@@ -9,12 +9,13 @@ class ProjectPage extends Component {
       <div>
         <h2>Project Page</h2>
         <ul>
-            {/* {this.props.reduxState.projectReducer.map((project) => {
+            {JSON.stringify(this.props.reduxState)}
+            {this.props.reduxState.projectReducer.map((project) => {
                 return(
                     <li key={project.id}>Name: {project.name} Description: {project.description} 
                     Thumbnail: {project.thumbnail} Website: {project.website} github: {project.github} Date Complete: {project.date_complete} </li>
                 )
-            })} */}
+            })}
         </ul>
         
       </div>
