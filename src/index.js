@@ -15,6 +15,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('RENDER_PROJECT', getProjectsList);
+    yield takeEvery('DELETE_PROJECT', deleteProject);
+    yield takeEvery('ADD_PROJECT', addProject);
 }
 
 function* getProjectsList(action){
@@ -29,6 +31,34 @@ function* getProjectsList(action){
       
     }
   }
+
+function* deleteProject(action){
+    try{
+        console.log('deleteProject action', action.payload);
+        
+        const response = yield call(axios.delete, `/projects/${action.payload}`)
+        console.log('deleteProjects response', response.data);
+        yield put(({type: 'RENDER_PROJECT'}))
+        
+    }
+    catch (error) {
+        console.log('error with delete Projects', error);
+        
+    }
+}
+
+function* addProject(action){
+    console.log('adding this to DB', action.payload);
+    
+    try{
+        yield call(axios.post, '/projects', action.payload)
+        yield put({ type: 'RENDER_PROJECT' });
+    }
+    catch (error) {
+        console.log('error on plant POST', error);
+        
+    }
+}
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
