@@ -24,3 +24,8 @@
   text-align: center;
   height: 100px;
 }
+
+#thumbnail{
+  height: 60px;
+  float: left;
+}

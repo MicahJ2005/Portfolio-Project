@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App/App.css';
+import { HashRouter as Link} from 'react-router-dom';
 
 class Header extends Component {
   // Renders the entire app on the DOM

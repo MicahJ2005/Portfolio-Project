@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App/App.css';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 class ProjectPage extends Component {
   // Renders the entire app on the DOM
+
+  adminPage = (event) => {
+    console.log('in adminButton');
+    event.preventDefault();
+    this.props.history.push('/admin');
+  }
+
+
   render() {
     return (
       <div>
+        <button onClick={this.adminPage}>Admin Page</button>
         <h2>Project Page</h2>
         <ul>
-            {JSON.stringify(this.props.reduxState)}
+            
             {this.props.reduxState.projectReducer.map((project) => {
                 return(
-                    <li key={project.id}>Name: {project.name} Description: {project.description} 
-                    Thumbnail: {project.thumbnail} Website: {project.website} github: {project.github} Date Complete: {project.date_complete} </li>
+                    <Card key={project.id}>
+                        <CardContent>
+                            <img id="thumbnail" alt="thumbnail" src={project.thumbnail}/> <br></br>
+                        </CardContent>
+                        <CardContent>
+                            <a href={project.website}>Website</a> <br></br>
+                            <a href={project.github}>GitHub</a><br></br>
+                        </CardContent>
+                        <CardContent>
+                            Name: {project.name} <br></br>
+                            Description: {project.description} <br></br>
+                            Date Complete: {project.date_completed} <br></br>
+                        </CardContent>
+                    </Card>
+                    
                 )
             })}
         </ul>
