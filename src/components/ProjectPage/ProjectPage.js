@@ -22,6 +22,7 @@ class ProjectPage extends Component {
         <ul>
             
             {this.props.reduxState.projectReducer.map((project) => {
+                
                 return(
                     <Card key={project.id}>
                         <CardContent>
@@ -35,6 +36,15 @@ class ProjectPage extends Component {
                             Name: {project.name} <br></br>
                             Description: {project.description} <br></br>
                             Date Complete: {project.date_completed} <br></br>
+                            Project Tag: {project.tag_id} <br></br>
+                        </CardContent>
+                        <CardContent>
+                            {JSON.stringify(this.props.reduxState.tagsReducer)}
+                            {this.props.reduxState.tagsReducer.map(tag => {
+                                return( <li>{tag.name} </li>
+                                    )
+                                
+                            })}
                         </CardContent>
                     </Card>
                     

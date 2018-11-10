@@ -17,7 +17,22 @@ function* rootSaga() {
     yield takeEvery('RENDER_PROJECT', getProjectsList);
     yield takeEvery('DELETE_PROJECT', deleteProject);
     yield takeEvery('ADD_PROJECT', addProject);
+    yield takeEvery('RENDER_TAG', getTag);
 }
+
+function* getTag(action){
+    try {
+      const response = yield call(axios.get, '/projects/tags')
+      console.log('getProjectsList api response', response);
+      yield put(({ type: 'SET_TAGS', payload: response.data}))
+      
+    }
+    catch (error) {
+      console.log('error with getting reques', error);
+      
+    }
+  }
+
 
 function* getProjectsList(action){
     try {
@@ -37,7 +52,8 @@ function* deleteProject(action){
         console.log('deleteProject action', action.payload);
         
         const response = yield call(axios.delete, `/projects/${action.payload}`)
-        console.log('deleteProjects response', response.data);
+        console.log('delete response', response);
+        
         yield put(({type: 'RENDER_PROJECT'}))
         
     }
@@ -52,9 +68,11 @@ function* addProject(action){
     
     try{
         yield call(axios.post, '/projects', action.payload)
+        alert('Successfully Added New Project to Database')
         yield put({ type: 'RENDER_PROJECT' });
     }
     catch (error) {
+        alert('DataBase could not be found. Check your routes')
         console.log('error on plant POST', error);
         
     }
@@ -74,7 +92,7 @@ const projectReducer = (state = [], action) => {
 }
 
 // Used to store the project tags (e.g. 'React', 'jQuery', 'Angular', 'Node.js')
-const tags = (state = [], action) => {
+const tagsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_TAGS':
             return action.payload;
@@ -87,7 +105,7 @@ const tags = (state = [], action) => {
 const storeInstance = createStore(
     combineReducers({
         projectReducer,
-        tags,
+        tagsReducer,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

@@ -10,6 +10,7 @@ class App extends Component {
   // Renders the entire app on the DOM
   componentDidMount() {
     this.props.dispatch({ type: 'RENDER_PROJECT', payload: this.state})
+    this.props.dispatch({ type: 'RENDER_TAG', payload: this.state})
     
 }
 

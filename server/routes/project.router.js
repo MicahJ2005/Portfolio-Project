@@ -13,6 +13,16 @@ router.get('/', (req, res) => {
       });
   });
 
+  router.get('/tags', (req, res) => {
+    const queryText = 'SELECT tags.name FROM tags JOIN projects ON projects.tag_id=tags.id GROUP BY tags.name';
+    pool.query(queryText)
+      .then((result) => { res.send(result.rows); })
+      .catch((err) => {
+        console.log('Error completing SELECT project query', err);
+        res.sendStatus(500);
+      });
+  });
+
 
   router.post('/', (req, res) => {
     const newProject = req.body;
