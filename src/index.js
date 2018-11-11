@@ -25,6 +25,7 @@ function* getTag(action){
       const response = yield call(axios.get, '/projects/tags')
       console.log('getProjectsList api response', response);
       yield put(({ type: 'SET_TAGS', payload: response.data}))
+      yield put(({ type: 'RENDER_PROJECT', payload: response.data}))
       
     }
     catch (error) {

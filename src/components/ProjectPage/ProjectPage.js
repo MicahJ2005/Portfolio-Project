@@ -39,9 +39,9 @@ class ProjectPage extends Component {
                             Project Tag: {project.tag_id} <br></br>
                         </CardContent>
                         <CardContent>
-                            {JSON.stringify(this.props.reduxState.tagsReducer)}
+                            {/* {JSON.stringify(this.props.reduxState.tagsReducer)} */}
                             {this.props.reduxState.tagsReducer.map(tag => {
-                                return( <li>{tag.name} </li>
+                                return( <li key={tag.name}>{tag.name} </li>
                                     )
                                 
                             })}
