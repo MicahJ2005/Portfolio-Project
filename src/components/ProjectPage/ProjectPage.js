@@ -20,36 +20,35 @@ class ProjectPage extends Component {
         <button onClick={this.adminPage}>Admin Page</button>
         <h2>Project Page</h2>
         <ul>
-            
-            {this.props.reduxState.projectReducer.map((project) => {
-                
+            <pre>{JSON.stringify(this.props.reduxState.tagsReducer)}</pre>
+            {this.props.reduxState.projectReducer.map(project => {
+                // {this.props.reduxState.tagsReducer.map( tag  => {
                 return(
                     <Card key={project.id}>
                         <CardContent>
                             <img id="thumbnail" alt="thumbnail" src={project.thumbnail}/> <br></br>
                         </CardContent>
                         <CardContent>
-                            <a href={project.website}>Website</a> <br></br>
-                            <a href={project.github}>GitHub</a><br></br>
+                            {project.website === '' ? '' : <a href={project.website}>Website</a>}<br></br>
+                            {project.github === '' ? '' : <a href={project.github}>GitHub</a>}<br></br>
                         </CardContent>
                         <CardContent>
                             Name: {project.name} <br></br>
-                            Description: {project.description} <br></br>
-                            Date Complete: {project.date_completed} <br></br>
-                            Project Tag: {project.tag_id} <br></br>
-                        </CardContent>
-                        <CardContent>
+                            {project.description === '' ? '' : <li>Description: {project.description}</li>} <br></br>
+                            {project.date_completed === '' ? '' : <li>Date Complete: {project.date_completed}</li>} <br></br>
+                            <br></br>
                             {/* {JSON.stringify(this.props.reduxState.tagsReducer)} */}
-                            {this.props.reduxState.tagsReducer.map(tag => {
-                                return( <li key={tag.name}>{tag.name} </li>
+                            {this.props.reduxState.tagsReducer.map((tag, index)  => {
+                                return (<li key={tag.id}> Project tag: {tag.name} </li>
                                     )
-                                
                             })}
                         </CardContent>
+                        <CardContent>
+                            
+                        </CardContent>
                     </Card>
-                    
-                )
-            })}
+                    )
+             })}
         </ul>
         
       </div>

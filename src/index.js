@@ -23,7 +23,7 @@ function* rootSaga() {
 function* getTag(action){
     try {
       const response = yield call(axios.get, '/projects/tags')
-      console.log('getProjectsList api response', response);
+      console.log('getTAG api response', action.payload);
       yield put(({ type: 'SET_TAGS', payload: response.data}))
       yield put(({ type: 'RENDER_PROJECT', payload: response.data}))
       

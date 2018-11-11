@@ -13,8 +13,11 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.get('/tags', (req, res) => {
-    const queryText = 'SELECT tags.name FROM tags JOIN projects ON projects.tag_id=tags.id GROUP BY tags.name';
+  router.get('/:id', (req, res) => {
+    let reqId = req.params.id;
+    console.log('GET TAGS request for id', reqId);
+    
+    const queryText = 'SELECT tags.name, tags.id FROM tags JOIN projects ON projects.tag_id=tags.id GROUP BY tags.name, tags.id;';
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {
