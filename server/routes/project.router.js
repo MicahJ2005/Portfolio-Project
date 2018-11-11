@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const queryText = 'SELECT * FROM projects';
+    const queryText = 'SELECT projects.*, tags.name as tag FROM projects JOIN tags ON projects.tag_id = tags.id';
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     let reqId = req.params.id;
     console.log('GET TAGS request for id', reqId);
     
-    const queryText = 'SELECT tags.name, tags.id FROM tags JOIN projects ON projects.tag_id=tags.id GROUP BY tags.name, tags.id;';
+    const queryText = 'SELECT projects.*, tags.name as tag FROM projects JOIN tags ON projects.tag_id = tags.id';
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {

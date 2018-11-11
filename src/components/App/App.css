@@ -26,7 +26,7 @@
 }
 
 #thumbnail{
-  height: 60px;
+  height: 200px;
   float: left;
 }
 
@@ -43,4 +43,16 @@
 
 li{
   list-style-type: none;
+}
+
+#right{
+  float: right;
+}
+
+#left{
+  float: left;
+}
+
+#center{
+  align-content: center;
 }

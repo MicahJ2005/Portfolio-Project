@@ -71,7 +71,7 @@ deleteProject = (id) => {
         </section>
 
         <section>
-        <form onSubmit={this.addNewProject} >
+        <form onSubmit={this.addNewProject} id="form">
                 <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}

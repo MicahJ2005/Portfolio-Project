@@ -21,12 +21,6 @@ class App extends Component {
       <Router>
           <div>
           <Header/>
-        
-          
-        
-      
-        
-        
           <Route exact path="/" component={ProjectPage}/>
           <Route exact path="/admin" component={AdminPage}/>
        
