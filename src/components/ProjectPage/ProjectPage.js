@@ -20,9 +20,7 @@ class ProjectPage extends Component {
         <button onClick={this.adminPage}>Admin Page</button>
         <h2>Project Page</h2>
         <ul>
-            {/* <pre>{JSON.stringify(this.props.reduxState.projectReducer)}</pre> */}
             {this.props.reduxState.projectReducer.map(project => {
-                // {this.props.reduxState.tagsReducer.map( tag  => {
                 return(
                     <Card key={project.id}>
                         <CardContent id="left">
@@ -41,11 +39,10 @@ class ProjectPage extends Component {
                             {project.description === '' ? '' : <li>Description: {project.description}</li>}
                         </CardContent>
                         <CardContent>  
-                            {project.date_completed === '' ? '' : <li>Date Complete: {project.date_completed}</li>}
+                            {project.date_completed === '' ? '' : <li>Date Complete: {Date(project.date_completed)}</li>}
                         </CardContent>
-                        
                         <CardContent>
-                            {project.tag === '' ? '' : <li>Project Tag: {project.tag}</li>}
+                            {project.tag === '' ? '' : <li>Project Specialty: <em>{project.tag}</em></li>}
                         </CardContent>
                     </Card>
                     )
