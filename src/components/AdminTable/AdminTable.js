@@ -26,7 +26,7 @@ class AdminTable extends Component {
 
   render() {
     return (
-        <section>
+        <section >
 
             <Paper>
                 <Table>
@@ -41,7 +41,7 @@ class AdminTable extends Component {
                         <TableBody key={project.id}>
                             <TableRow>
                                 <TableCell>{project.name}</TableCell>
-                                <TableCell><Button onClick={() => {this.deleteProject(project.id)}}variant="outlined">Delete</Button></TableCell>
+                                <TableCell><Button onClick={() => {this.deleteProject(project.id)}} variant="contained" color="secondary">Delete</Button></TableCell>
                             </TableRow>
                         </TableBody>
                     )

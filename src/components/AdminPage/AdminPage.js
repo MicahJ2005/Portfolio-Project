@@ -16,7 +16,7 @@ class AdminPage extends Component {
 
   render() {
     return (
-      <div>
+      <div id="adminPage">
         <section>
             <button onClick={this.backToProjects}>Back to Projects</button>
             <h2>Admin Page</h2>
@@ -26,6 +26,7 @@ class AdminPage extends Component {
             {/* // Form Component coming in */}
             <AdminForm /> 
         </section>
+<br></br>
 <br></br>
         <section>
             {/* //Table component coming in */}

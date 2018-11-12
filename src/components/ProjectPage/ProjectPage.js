@@ -17,7 +17,7 @@ class ProjectPage extends Component {
 
   render() {
     return (
-      <div>
+      <section id="projectPage">
         <button onClick={this.adminPage}>Admin Page</button>
         <h2>Project Page</h2>
         <ul>
@@ -50,7 +50,7 @@ class ProjectPage extends Component {
              })}
         </ul>
         
-      </div>
+      </section>
     );
   }
 }

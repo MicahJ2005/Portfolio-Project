@@ -45,9 +45,8 @@ class AdminForm extends Component {
 
   render() {
     return (
-      <div> 
-        <section>
-        <form onSubmit={this.addNewProject} id="form">
+        <section id="adminPage">
+        <form onSubmit={this.addNewProject} id="adminPage">
                 <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
@@ -92,31 +91,7 @@ class AdminForm extends Component {
                             
                         />
                 </FormControl>   
-                <FormControl>    
-                <InputLabel shrink htmlFor="age-label-placeholder">
-                        Tag
-                     </InputLabel>
-                            
-                        <Select
-                            id="textField"
-                            value={this.state.tag_id}
-                            onChange={this.handleChange}
-                            label = "tag"
-                            name="tag_id"
-                            >
-                                <MenuItem value="">
-                                <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={1}>React</MenuItem>
-                                <MenuItem value={2}>jQuery</MenuItem>
-                                <MenuItem value={3}>Node</MenuItem>
-                                <MenuItem value={4}>SQL</MenuItem>
-                                <MenuItem value={5}>Redux</MenuItem>
-                                <MenuItem value={6}>HTML</MenuItem>
-                        </Select>
-                        
-                        <FormHelperText>Project Tag</FormHelperText>
-                </FormControl>
+                
                 <FormControl>
                         <TextField 
                             onChange={this.handleChange}
@@ -162,13 +137,36 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
+                <FormControl>    
+                <InputLabel shrink htmlFor="age-label-placeholder">
+                        Tag
+                     </InputLabel>
+                            
+                        <Select
+                            id="textField"
+                            value={this.state.tag_id}
+                            onChange={this.handleChange}
+                            label = "tag"
+                            name="tag_id"
+                            >
+                                <MenuItem value="">
+                                <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={1}>React</MenuItem>
+                                <MenuItem value={2}>jQuery</MenuItem>
+                                <MenuItem value={3}>Node</MenuItem>
+                                <MenuItem value={4}>SQL</MenuItem>
+                                <MenuItem value={5}>Redux</MenuItem>
+                                <MenuItem value={6}>HTML</MenuItem>
+                        </Select>
+                        
+                        <FormHelperText>Project Tag</FormHelperText>
+                </FormControl>
                 <FormControl>
-                        <Button type="submit" variant="outlined" >Submit</Button>
+                        <Button type="submit" variant="outlined" color="primary">Submit</Button>
                 </FormControl>
             </form>
         </section>
-        <br></br>
-      </div>
     );
   }
 }
