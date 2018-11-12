@@ -15,7 +15,7 @@
   padding: 25px; 
   height: 100px;
   border-style: outset;
-  border-width: 30px;
+  border-width: 40px;
   border-color: grey;
 }
 
@@ -24,14 +24,12 @@
   float: left;
 }
 
-#textField {
-  margin: 20px;
-  width: 200,
-
-}
 
 #form{
-  display: inline;
+  /* float: inherit; */
+  display: inline-block;
+  margin-right: 30px;
+
   
 }
 

@@ -62,7 +62,7 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
-                <FormControl>
+                <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
                             value={this.state.description}
@@ -76,7 +76,7 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
-                <FormControl>
+                <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
                             value={this.state.date_completed}
@@ -92,7 +92,7 @@ class AdminForm extends Component {
                         />
                 </FormControl>   
                 
-                <FormControl>
+                <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
                             value={this.state.github}
@@ -107,7 +107,7 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
-                <FormControl>
+                <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
                             value={this.state.website}
@@ -122,7 +122,7 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
-                <FormControl>
+                <FormControl id="form">
                         <TextField 
                             onChange={this.handleChange}
                             value={this.state.thumbnail}
@@ -137,7 +137,7 @@ class AdminForm extends Component {
                             }}
                         />
                 </FormControl>
-                <FormControl>    
+                <FormControl id="form">    
                 <InputLabel shrink htmlFor="age-label-placeholder">
                         Tag
                      </InputLabel>
@@ -162,7 +162,7 @@ class AdminForm extends Component {
                         
                         <FormHelperText>Project Tag</FormHelperText>
                 </FormControl>
-                <FormControl>
+                <FormControl id="form">
                         <Button type="submit" variant="outlined" color="primary">Submit</Button>
                 </FormControl>
             </form>
