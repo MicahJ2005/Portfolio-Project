@@ -10,9 +10,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 
+
+/// AdminTable is simply the 'table' portion of the AdminPage
+/// It is componentizes for readability
 class AdminTable extends Component {
   // Renders the entire app on the DOM
 
+    ///deleteProject will remove a project from the database, by dispatching the type and payload: id 
+    // to my saga on index.js
     deleteProject = (id) => {
         console.log('in delete project')
         this.props.dispatch({ type: 'DELETE_PROJECT', payload: id})
@@ -31,7 +36,7 @@ class AdminTable extends Component {
                             <TableCell><Typography>Delete?</Typography></TableCell>
                         </TableRow>
                     </TableHead>
-                {this.props.reduxState.projectReducer.map((project) => {///mapping all projectReducer, including the JOIN from my router
+                {this.props.reduxState.projectReducer.map((project) => {// mapping projectReducer and returning the project.name
                     return(
                         <TableBody key={project.id}>
                             <TableRow>

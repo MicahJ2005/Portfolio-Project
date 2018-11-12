@@ -12,29 +12,29 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 
-// Create the rootSaga generator function
+//  rootSaga generator function is getting calls from other js file dispatches
 function* rootSaga() {
     yield takeEvery('RENDER_PROJECT', getProjectsList);
     yield takeEvery('DELETE_PROJECT', deleteProject);
     yield takeEvery('ADD_PROJECT', addProject);
-    yield takeEvery('RENDER_TAG', getTag);
+    // yield takeEvery('RENDER_TAG', getTag);
 }
-
-function* getTag(action){
-    try {
-      const response = yield call(axios.get, '/projects/tags')
-      console.log('getTAG api response', action.payload);
-      yield put(({ type: 'SET_TAGS', payload: response.data}))
-      yield put(({ type: 'RENDER_PROJECT', payload: response.data}))
+    //unused function
+// function* getTag(action){
+//     try {
+//       const response = yield call(axios.get, '/projects/tags')
+//       console.log('getTAG api response', action.payload);
+//       yield put(({ type: 'SET_TAGS', payload: response.data}))
+//       yield put(({ type: 'RENDER_PROJECT', payload: response.data}))
       
-    }
-    catch (error) {
-      console.log('error with getting reques', error);
+//     }
+//     catch (error) {
+//       console.log('error with getting reques', error);
       
-    }
-  }
+//     }
+//   }
 
-
+/// getProjectsList is used to call the project list from my DB and send response to 'SET_PROJECTS'
 function* getProjectsList(action){
     try {
       const response = yield call(axios.get, '/projects')
@@ -48,6 +48,8 @@ function* getProjectsList(action){
     }
   }
 
+  //// deleteProject is deleting a project from the DB, based on the action.payload id (passed from the js dispatch)
+  /// once call is completed 'RENDER_PROJECT' is called and the project list is re-rendered
 function* deleteProject(action){
     try{
         console.log('deleteProject action', action.payload);
@@ -64,6 +66,8 @@ function* deleteProject(action){
     }
 }
 
+///addProject is adding a new project to the DB, based on the information we received from 
+// the form dispatch. Once the DB is updated succesfully, 'RENDER_PROJECT' will re-render everything to the DOM
 function* addProject(action){
     console.log('adding this to DB', action.payload);
     
@@ -92,21 +96,21 @@ const projectReducer = (state = [], action) => {
     }
 }
 
-// Used to store the project tags (e.g. 'React', 'jQuery', 'Angular', 'Node.js')
-const tagsReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_TAGS':
-            return action.payload;
-        default:
-            return state;
-    }
-}
+// Did not need this premade reducer as my form selector accomplished this 
+// const tagsReducer = (state = [], action) => {
+//     switch (action.type) {
+//         case 'SET_TAGS':
+//             return action.payload;
+//         default:
+//             return state;
+//     }
+// }
 
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         projectReducer,
-        tagsReducer,
+        // tagsReducer,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

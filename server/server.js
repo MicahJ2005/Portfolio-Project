@@ -9,6 +9,7 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
+///added route to link up my api and projectRouter
 app.use('/projects', projectRouter);
 
 /** ---------- START SERVER ---------- **/

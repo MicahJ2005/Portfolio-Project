@@ -10,7 +10,7 @@ class App extends Component {
   // Renders the entire app on the DOM
   componentDidMount() {
     this.props.dispatch({ type: 'RENDER_PROJECT', payload: this.state})
-    this.props.dispatch({ type: 'RENDER_TAG', payload: this.state})
+    // this.props.dispatch({ type: 'RENDER_TAG', payload: this.state})
     
 }
 
@@ -20,7 +20,9 @@ class App extends Component {
       
       <Router>
           <div>
+            {/* //Header is componentized// */}
           <Header/>
+          {/* //Routes for our ProjectPage and AdminPage// */}
           <Route exact path="/" component={ProjectPage}/>
           <Route exact path="/admin" component={AdminPage}/>
        

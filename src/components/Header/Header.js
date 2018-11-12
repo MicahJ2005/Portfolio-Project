@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App/App.css';
 
+//// The Header Page is part of the entire project, just componentized for better readability
 
 class Header extends Component {
   // Renders the entire app on the DOM

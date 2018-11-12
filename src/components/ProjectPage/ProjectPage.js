@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 class ProjectPage extends Component {
   // Renders the entire app on the DOM
 
+//adminPage is called onClick and send the user over to the AdminPage
   adminPage = (event) => {
     console.log('in adminButton');
     event.preventDefault();
@@ -20,8 +21,8 @@ class ProjectPage extends Component {
         <button onClick={this.adminPage}>Admin Page</button>
         <h2>Project Page</h2>
         <ul>
-            {this.props.reduxState.projectReducer.map(project => {
-                return(
+            {this.props.reduxState.projectReducer.map(project => { ///mapping all projectReducer, including the JOIN from my router
+                return(//each CardContent below is conditionally rendering the provided information, except name
                     <Card key={project.id}>
                         <CardContent id="left">
                             {project.thumbnail === '' ? '' : <li><img id="thumbnail" alt="thumbnail" src={project.thumbnail}/></li>}

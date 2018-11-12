@@ -7,6 +7,7 @@ import AdminTable from '../AdminTable/AdminTable';
 class AdminPage extends Component {
   // Renders the entire app on the DOM
 
+  /// onClick, this function will run and send the user back to the ProjectPage
     backToProjects = (event) => {
         console.log('in adminButton');
         event.preventDefault();
@@ -22,10 +23,12 @@ class AdminPage extends Component {
         </section>
         
         <section> 
+            {/* // Form Component coming in */}
             <AdminForm /> 
         </section>
 <br></br>
         <section>
+            {/* //Table component coming in */}
             <AdminTable />
         </section>
       </div>

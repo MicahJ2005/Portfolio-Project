@@ -9,7 +9,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
-
+/// AdminForm is simply the 'form' portion of the AdminPage
+/// It is componentizes for readability
 
 const newProject = {
     name: '',
@@ -23,15 +24,16 @@ const newProject = {
 
 class AdminForm extends Component {
   // Renders the entire app on the DOM
-
+    ///setting state
     state = newProject
 
+    /// handling the change of each event
     handleChange = event => {
         this.setState({
                 [event.target.name]: event.target.value,
         });
 }
-
+    ///addNewProject dispatched our new state/project to our root saga on index.js
     addNewProject = event => {
         console.log('newProject', this.state);
         event.preventDefault();
@@ -170,7 +172,7 @@ class AdminForm extends Component {
     );
   }
 }
-
+///mapping to redux data
 const mapStateToProps = reduxState => ({
     reduxState,
 });
