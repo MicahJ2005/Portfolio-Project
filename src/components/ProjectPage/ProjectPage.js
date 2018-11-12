@@ -23,9 +23,10 @@ class ProjectPage extends Component {
         <ul>
             {this.props.reduxState.projectReducer.map(project => { ///mapping all projectReducer, including the JOIN from my router
                 return(//each CardContent below is conditionally rendering the provided information, except name
-                    <Card key={project.id}>
+                    ////to add from images file input '../images/feedback.png' in place of {project.thumbnail}
+                    <Card key={project.id} id="card">
                         <CardContent id="left">
-                            {project.thumbnail === '' ? '' : <li><img id="thumbnail" alt="thumbnail" src={project.thumbnail}/></li>}
+                            {project.thumbnail === '' ? '' : <li><img id="thumbnail" alt="thumbnail" src={project.thumbnail}/></li>} 
                         </CardContent>
                         <CardContent id="right">
                             {project.website === '' ? '' : <a href={project.website}>Website</a>}

@@ -28,7 +28,7 @@ class AdminTable extends Component {
     return (
         <section >
 
-            <Paper>
+            <Paper id="card">
                 <Table>
                     <TableHead>
                         <TableRow>
