@@ -28,7 +28,7 @@ class AdminTable extends Component {
     return (
         <section >
 
-            <Paper id="card">
+            <Paper id="tableBody">
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -38,7 +38,7 @@ class AdminTable extends Component {
                     </TableHead>
                 {this.props.reduxState.projectReducer.map((project) => {// mapping projectReducer and returning the project.name
                     return(
-                        <TableBody key={project.id}>
+                        <TableBody key={project.id} >
                             <TableRow>
                                 <TableCell>{project.name}</TableCell>
                                 <TableCell><Button onClick={() => {this.deleteProject(project.id)}} variant="contained" color="secondary">Delete</Button></TableCell>

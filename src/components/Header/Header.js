@@ -8,7 +8,9 @@ class Header extends Component {
   render() {
     return (
         <header id="header">
-            <h1>Micah's Portfolio</h1>
+        <img id="left" src={`https://github.com/Micahj2005.png?size=116`} />
+            <h1 >Micah's Portfolio</h1>
+            
         </header>
      
     );

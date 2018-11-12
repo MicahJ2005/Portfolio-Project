@@ -9,7 +9,7 @@
 
 #header{
   background-color: rgb(63, 82, 248);
-  text-align: center;
+  /* text-align: center; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
   color: white;
@@ -29,9 +29,14 @@
 #form{
   /* float: inherit; */
   display: inline-block;
-  margin-right: 30px;
-
+  margin-right: 20px;
+  margin-left: 10px;
   
+}
+
+h1{
+  text-align: center;
+  margin-right: 120px;
 }
 
 li{
@@ -52,4 +57,13 @@ li{
 
 #card{
   background-color: lightsteelblue;
+  width: 1350px;
+  display: inline-block;
+ 
+}
+
+#tableBody{
+  background-color: lightsteelblue;
+  margin-right: 30px;
+  margin-left: 30px;
 }
