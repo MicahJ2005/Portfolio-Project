@@ -1,10 +1,9 @@
 # React Redux with Sagas
-
-For this weekend challenge, I built a portfolio of previous projects
+ I built a portfolio to display any previous projects
 
 ## Setup
 
-I have created the below database and called it "portfolio"
+I have created the below database and called it "portfolio" in postgresql DB
 
 ```SQL
 CREATE TABLE "tags" (
@@ -38,12 +37,10 @@ Each project is linked to a tag_id, which is joining two sparate forms in my SQL
 
 I have taken a few screenshots of my previous projects. The current functioning mode allows the user to import a URL picture, which will display in the thumbnail section of the Project Page
 
-**Do not implement image upload for base mode.**
-
 
 ## Feature List
 
-To the best of my knowledge, the following basemode features have been completed and are functioning correctly.
+To the best of my knowledge, the following features have been completed and are functioning correctly.
 
 
 ### Project Page
@@ -81,9 +78,4 @@ My projects looks much different than the wireframe provided, but the general fu
 
 <img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/admin_page.png" width="560">
 
-## Stretch Goals
 
-- [ ] Use the GitHub API to get user information to display at the top of the page
-- [ x ] Improve styling on the page using Material UI
-- [ ] Include a form on the admin page for adding new tags
-- [ ] Implement additional features of the GitHub API
